@@ -1,0 +1,90 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-fundo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#icone-carta {
+    width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+    cursor: pointer;
+}
+
+.modal {
+    display: flex; /* Mudança de display: none para flex */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none; /* Para prevenir interações quando a modal está invisível */
+    transition: opacity 0.5s ease;
+}
+
+.modal.modal-aberta {
+    opacity: 1;
+    pointer-events: auto; /* Permite interações quando a modal está visível */
+}
+
+.modal-conteudo {
+    background-color: #fefefe;
+    color: black;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px; /* Ajuste o tamanho máximo da modal para evitar "vazamento" */
+    overflow-wrap: break-word; /* Permite quebra de linha para palavras longas */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+    transform: translateY(-50px);
+    transition: transform 0.5s ease;
+}
+
+.modal.modal-aberta .modal-conteudo {
+    transform: translateY(0);
+}
+
+.fechar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fechar:hover,
+.fechar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
